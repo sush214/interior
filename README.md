@@ -14,3 +14,12 @@ This is a full-stack interior inquiry web application.
 ## Structure
 - /backend → API & server
 - / → frontend
+## How to Run the Project
+
+### Backend
+cd backend
+npm install
+npm start
+
+### Frontend
+Open index.html in browser
