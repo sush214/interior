@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KBINTERIO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68beca154c11c9192335d8f7/1j4kkapsh';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+  
+  <style>
+    /* RESET */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      overflow-x: hidden; 
+      scroll-behavior: smooth; 
+    }
+
+    /* HEADER */
+   .header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: linear-gradient(90deg, #0a1a3f, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.6rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  z-index: 999;
+  height: 90px; /* ✅ fixed header height */
+  overflow: visible; /* allows logo to overflow without stretching */
+}
+
+/* Logo wrapper */
+.logo {
+  position: relative;
+}
+
+/* Large logo image without changing header height */
+.logo-container {
+  position: absolute;
+  top: 50%;              /* centers vertically */
+  left: 0;
+  transform: translateY(-50%);
+  width: 400px;          /* logo width */
+  height: 200px;         /* logo height */
+  background-image: url("images/LOGO1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom (optional) */
+.logo-container:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+    .nav-links { display: flex; gap: 1.5rem;  margin-left: 300px;  }
+    .nav-links a { 
+      font-weight: bold; 
+      color: #fff; 
+      text-decoration: none; 
+      font-size: 1.1rem; 
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover { color: #ffcc00; }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center;
+      text-align: center;
+      padding-top: 70px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .hero h1 {
+      font-size: 6rem;
+      color: #456fca;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.575);
+      margin-bottom: 120px;
+      margin-top: 0px;
+      word-spacing: 2%;
+    }
+    .thumb-strip {
+      display: flex; gap: 15px; overflow-x: auto; padding: 15px;
+      background: rgba(255,255,255,0.85); border-radius: 10px;
+      max-width: 90%; scrollbar-width: thin;
+    }
+    .thumb-strip img { width: 120px; height: 80px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+
+    /* SLIDER SECTION */
+    .slider-section {
+      position: relative;
+      height: 100vh; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      overflow: hidden;
+      color: #fff;
+    }
+    .slider-section::before {
+      content: "";
+      position: absolute; 
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('images/simple background.jpg') no-repeat center center/cover;
+      z-index: -2;
+    }
+    .slider-section::after {
+      content: "";
+      position: absolute; 
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); /* dark overlay */
+      z-index: -1;
+    }
+    .slider-title {
+      position: absolute; top: 40px; text-align: center; width: 100%;
+      font-size: 2.5rem; font-weight: bold; color: #ffcc00;
+    }
+    .slider {
+      display: flex; animation: slide 20s infinite linear;
+    }
+    .slider img { 
+      width: 500px; 
+      height: 400px; 
+      margin: 0 10px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    @keyframes slide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* 3 COLUMN SECTION */
+  /* === ESTIMATE & CONSULTANCY SECTION === */
+.estimate-consult {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 60px; /* ✅ more breathing space between columns */
+  padding: 140px 80px;
+  background: #fff;
+  min-height: 750px; /* ✅ bigger height */
+  flex-wrap: wrap;
+}
+
+/* Common column styles */
+.estimate,
+.consult-details {
+  flex: 1;
+  min-width: 400px;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f5f5f5;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px; /* ✅ more inner spacing */
+  height: auto;
+}
+
+/* Headings */
+.estimate-consult h2 {
+  font-size: 2.4rem;
+  color: #083769;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+/* FORM */
+.estimate form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+.form-group label { 
+  font-weight: 600; 
+  font-size: 1rem; 
+  margin-bottom: 6px; 
+  display: block; 
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  padding: 15px; 
+  font-size: 1rem; 
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
+  width: 100%;
+}
+
+.estimate button {
+  padding: 16px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: linear-gradient(90deg, #083769, #d6005d);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.estimate button:hover { 
+  background: linear-gradient(90deg, #d6005d, #083769); 
+  transform: scale(1.03);
+}
+
+.success { 
+  margin-top: 12px; 
+  color: green; 
+  font-weight: bold; 
+  text-align: center; 
+  font-size: 1rem;
+}
+
+/* CONSULTANCY COLUMN */
+.consult-details p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.7;
+  text-align: center;
+  color: #333;
+}
+
+/* === GALLERY INSIDE CONSULTANCY === */
+.animated-gallery {
+  width: 100%;
+  margin-top: auto;
+}
+
+.big-slider {
+  position: relative;
+  width: 100%;
+  height: 300px; /* ✅ bigger height */
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  background: #ddd;
+}
+
+.big-slider img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  opacity: 0;
+  animation: fadeSlider 12s infinite;
+}
+
+.big-slider img:nth-child(1) { animation-delay: 0s; }
+.big-slider img:nth-child(2) { animation-delay: 3s; }
+.big-slider img:nth-child(3) { animation-delay: 6s; }
+.big-slider img:nth-child(4) { animation-delay: 9s; }
+
+@keyframes fadeSlider {
+  0% { opacity: 0; transform: scale(1); }
+  10% { opacity: 1; transform: scale(1.08); }
+  30% { opacity: 1; transform: scale(1.08); }
+  40% { opacity: 0; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1); }
+}
+
+/* Thumbnails */
+.small-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.small-images img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.small-images img:hover {
+  transform: scale(1.05);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .estimate-consult {
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px;
+    gap: 40px;
+  }
+
+  .estimate, .consult-details {
+    width: 100%;
+    max-width: 550px;
+  }
+
+  .big-slider {
+    height: 250px;
+  }
+}
+
+
+
+/* CONTACT SECTION */
+/* CONTACT SECTION */
+.contact {
+  padding: 100px 40px;
+  background: linear-gradient(90deg, #0a1a3f, #1e3c72);
+  color: #fff;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px; /* space between columns */
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Column styling */
+.about-us {
+  padding-right: 30px;
+  border-right: 2px solid rgba(255,255,255,0.3); /* subtle divider */
+}
+
+.contact-us {
+  padding-left: 40px;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffcc00;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.contact a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .about-us {
+    border-right: none;
+    padding-right: 50px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255,255,255,0.3); /* divider for mobile */
+  }
+  .contact-us {
+    padding-left: 20px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 100px 30px;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact p {
+    font-size: 1.05rem;
+  }
+}
+/* HERO SECTION */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 90px; /* header height */
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Hero Heading */
+.hero h1 {
+  font-size: 6rem;
+  color: #456fca;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.575);
+  margin-bottom: 180px; /* space for thumb strip */
+  margin-top: 0;
+  line-height: 1.1;
+  word-spacing: 2%;
+}
+
+/* Thumb Strip */
+.thumb-strip {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 15px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 10px;
+  max-width: 90%;
+  scrollbar-width: thin;
+}
+
+.thumb-strip img {
+  width: 120px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* ==== RESPONSIVE ==== */
+
+/* Large laptop / small desktop */
+@media (min-width: 900px) and (max-width: 1366px) {
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 140px;
+  }
+  .thumb-strip img {
+    width: 100px;
+    height: 70px;
+  }
+}
+
+/* Tablet / small laptop */
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 120px;
+  }
+  .thumb-strip {
+    width: 95%;
+    padding: 10px;
+    gap: 10px;
+  }
+  .thumb-strip img {
+    width: 80px;
+    height: 60px;
+  }
+}
+
+/* Mobile XS */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 100px;
+  }
+  .thumb-strip img {
+    width: 70px;
+    height: 50px;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+     <div class="logo">
+  <a href="#" class="logo-container"></a>
+</div>
+    <nav class="nav-links">
+      <a href="#contact">Contact Us</a>
+      <a href="#estimate-consult">Get Estimate</a>
+      <a href="#estimate-consult">Book Consultancy</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <img src="images/interior4.jpg" alt="Hero Background" class="hero-bg">
+    <h1>𝕎𝔼𝕃ℂ𝕆𝕄𝔼 <br>
+           𝕋𝕆   <br>
+        𝕂𝔹𝕀ℕ𝕋𝔼ℝ𝕀𝕆</h1>
+    <div class="thumb-strip">
+      <img src="images/interior5.jpg" alt="Design 1">
+      <img src="images/master bedroom 3.jpg" alt="Design 2">
+      <img src="images/kitchen1.jpg" alt="Design 3">
+      <img src="images/interior1.jpg" alt="Design 4">
+    </div>
+  </section>
+
+  <!-- SLIDER -->
+  <section class="slider-section">
+   <div class="slider-title">𝕆𝕌ℝ 𝔻𝔼𝕊𝕀𝔾ℕ 𝕊ℍ𝕆𝕎ℂ𝔸𝕊𝔼</div>
+    <div class="slider">
+      <img src="images/masterbedroom 2.jpeg">
+      <img src="images/wahsroom 2.jpg">
+      <img src="images/interior2.jpg">
+      <img src="images/garden 3.jpg">
+      <img src="images/kitchen 3.webp">
+      <img src="images/balcony 3.jpg">
+       <img src="images/interior6.webp">
+    </div>
+  </section>
+
+  <!-- 3 COLUMN SECTION -->
+<section class="estimate-consult" id="estimate-consult">
+  <!-- Left Column: Estimate Form -->
+  <div class="estimate">
+    <h2>Get Your Estimate</h2>
+    <form id="estimateForm">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="service">Service Required</label>
+        <select id="service">
+          <option>Interior Design</option>
+          <option>Renovation</option>
+          <option>Space Planning</option>
+          <option>Custom Furniture</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Project Details</label>
+        <textarea id="message" rows="3" placeholder="Describe your project"></textarea>
+      </div>
+      <button type="submit">Generate Estimate</button>
+      <div id="successMsg" class="success" style="display:none;">Lead generated successfully!</div>
+    </form>
+  </div>
+
+  <!-- Right Column: Consultancy Details -->
+  <div class="consult-details">
+    <h2>Book Consultancy</h2>
+    <p>Get expert guidance to transform your space into a perfect blend of aesthetics and functionality.  
+       Our professional designers provide tailored solutions to match your lifestyle and taste.</p>
+    
+    <!-- Animated Gallery -->
+   <div class="animated-gallery">
+  <!-- Big sliding images -->
+  <div class="big-slider">
+    <img src="images/washroom1.jpg">
+    <img src="images/garden 1.jpg">
+    <img src="images/dininig hall1.webp">
+    <img src="images/balcony1.jpg">
+    <img src="images/interior2.jpg">
+    <img src="images/kitchen 2.jpg">
+  </div>
+
+  <!-- Small thumbnails -->
+  <div class="small-images">
+    <img src="images/master bed room 1.jpg">
+    <img src="images/balcony 2.jpg">
+    <img src="images/washrrom3.jpg">
+    <img src="images/interior1.jpg">
+  </div>
+</div>
+
+
+
+   </section>
+   
+  <!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div>
+    <!-- About Us Column -->
+    <div class="about-us">
+      <h2>About Us</h2>
+      <p><strong>KBinterio</strong> is a proud division of <strong>Kataria Built Tech</strong>, a company known for excellence in construction and design innovation.  
+         With a vision to redefine modern living spaces, KBinterio brings together creativity, precision, and functionality in every project.  
+      </p>
+      <p>
+         Our interiors are carefully planned to reflect sophistication and comfort while meeting the practical needs of our clients.  
+         From residential homes to commercial spaces, we ensure that each design combines aesthetics with usability, turning every idea into reality.
+      </p>
+      <p>
+         Backed by years of expertise and a dedicated team of professionals, KBinterio has built a reputation for delivering projects that exceed expectations.  
+         Our philosophy is simple — to create spaces that inspire, elevate lifestyles, and stand the test of time.  
+         With innovation at the core and quality as our promise, we are committed to shaping spaces that truly feel like home.
+      </p>
+    </div>
+</div>
+    <!-- Contact Us Column -->
+    <div class="contact-us">
+      <h2>Contact Us</h2>
+      <p><strong>Phone:</strong> <a href="tel:+919035076515">+91 9035076515</a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@kbinterio.com">info@kbinterio.com</a>
+</p>
+      <p><strong>Address:</strong><br>
+         1st Floor, No.51, KB Royal Apartment,<br>
+         R.S Gardenia Layout, Hosur Main Road,<br>
+         Bommasandra, Bangalore, Karnataka - 560099
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+document.getElementById("estimateForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    service: document.getElementById("service").value,
+    message: document.getElementById("message").value,
+  };
+
+  try {
+    const res = await fetch("/api/estimate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+    if (result.success) {
+      alert(" Estimate Submitted Succesfully !");
+      document.getElementById("estimateForm").reset();
+    } else {
+      alert("❌ Error: " + result.error);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("⚠️ Something went wrong!");
+  }
+});
+</script>
+
+</body>
+</html>
